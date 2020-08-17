@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+
+  web:
+    build: ./docker/php/
+    volumes:
+      - type: bind
+        source: "."
+        target: "/var/www/html"
+      - type: bind
+        source: "./docker/apache/sites-enabled/"
+        target: "/etc/apache2/sites-enabled/"
+    depends_on:
+      - db
+    working_dir: "/var/www/html"
+
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
