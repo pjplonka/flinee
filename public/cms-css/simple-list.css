@@ -1,0 +1,14 @@
+.simple-list {
+    border: 1px solid #dee0e7;
+}
+
+.sl-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 20px;
+    border-top: 1px solid #dee0e7;
+}
+
+.sl-item:first-child {
+    border-top: none;
+}
