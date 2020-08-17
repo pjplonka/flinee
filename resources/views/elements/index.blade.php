@@ -16,7 +16,8 @@
                             <div class="sl-item relative">
                                 {{ $element->id }}
                                 <a href="/elements/{{ $element->id }}/edit">Edit</a>
-                                <form class="absolute" style="top:0; right: 0;" action="/categories/{{ $element->id }}" method="post">
+                                <form class="absolute" style="top:0; right: 0;" action="/elements/{{ $element->id }}" method="post">
+                                    @csrf
                                     @method('delete')
                                     <button class="absolute delete-prompt" style="top:8px; right: 0;" type="submit">
                                         Delete
